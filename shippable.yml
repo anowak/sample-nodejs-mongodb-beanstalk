@@ -31,5 +31,4 @@ script:
 after_success:
   - ./node_modules/.bin/istanbul cover grunt -- -u tdd
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
-  - if [ $BRANCH = 'prod' ]; then ENV='sample-nodejs-env-prod'; else ENV='sample-nodejs-env'; fi
-  - eb init && eb deploy $ENV
+  - eb init && eb deploy
